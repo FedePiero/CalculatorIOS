@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <audio id="audio" src="data/clickSoundIphone.mp3"></audio>
+    <div class="mainForm">
+        <div class="buttonsLayout">
+        <div class="displayResult" id="resultLabel">
+            <h1>
+                0
+            </h1>
+        </div>
+        <div class="button greyButton" id="functionClear">
+            <h2>
+                AC
+            </h2>
+        </div>
+        <div class="button greyButton" id="functionChangeSymbol">
+            <h2>
+                +/-
+            </h2>
+        </div>
+        <div class="button greyButton" id="functionRest">
+            <h2>
+               %
+            </h2>
+        </div>
+        <div class="button orangeButton" id="functionDivisor">
+            <h2>
+                /
+            </h2>
+        </div>
+        <div class="button darkGreyButton" id="number7">
+            <h2>
+                7
+            </h2>
+        </div>
+        <div class="button darkGreyButton" id="number8">
+            <h2>
+                8
+            </h2>
+        </div>
+        <div class="button darkGreyButton" id="number9">
+            <h2>
+                9
+            </h2>
+        </div>
+        <div class="button orangeButton" id="functionMultiplication">
+            <h2>
+                X
+            </h2>
+        </div>
+        <div class="button darkGreyButton" id="number4">
+            <h2>
+                4
+            </h2>
+        </div>
+        <div class="button darkGreyButton" id="number5">
+            <h2>
+                5
+            </h2>
+        </div>
+        <div class="button darkGreyButton" id="number6">
+            <h2>
+                6
+            </h2>
+        </div>
+        <div class="button orangeButton" id="functionmLess">
+            <h2>
+                -
+            </h2>
+        </div>
+        <div class="button darkGreyButton" id="number1">
+            <h2>
+                1
+            </h2>
+        </div>
+        <div class="button darkGreyButton" id="number2">
+            <h2>
+                2
+            </h2>
+        </div>
+        <div class="button darkGreyButton" id="number3">
+            <h2>
+                3
+            </h2>
+        </div>
+        <div class="button orangeButton" id="functionPlus">
+            <h2>
+                +
+            </h2>
+        </div>
+        <div class="buttonDouble darkGreyButton" id="number0">
+            <h2>
+                0
+            </h2>
+        </div>
+        <div class="button darkGreyButton" id="functionDot">
+            <h2>
+                ,
+            </h2>
+        </div>
+        <div class="button orangeButton" id="functionEqual">
+            <h2>
+                =
+            </h2>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
+
+<style>
+    .mainForm{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 20%;
+        background-color: black;
+        border-radius: 3%;
+    }
+    .buttonsLayout{
+        margin-left: 15px;
+        margin-right: 15px;
+        padding-bottom: 30px;
+    }
+    .displayResult{
+        display: block;
+        position: relative;
+        text-align: right;
+        padding-top: 40px;
+        padding-right: 20px;
+        color: white;
+    }
+    .button{
+        margin: 5px;
+        width: 20.5%;
+        aspect-ratio : 1 / 1;
+        border-radius: 50%;
+        display: inline-block;
+        text-align: center;
+        cursor: pointer;
+    }
+    .buttonDouble{
+        margin: 5px;
+        width: 45.5%;
+        aspect-ratio : 2 / 1;
+        border-radius: 40px;
+        display: inline-block;
+        text-align: center;
+        cursor: pointer;
+    }
+    .greyButton{
+        background-color: rgb(180, 180, 180);
+        color: black;
+    }
+    .orangeButton{
+        background-color: orange;
+        color: white;
+    }
+    .darkGreyButton{
+        background-color: rgb(75, 75, 75);
+        color: white;
+    }
+</style>
+<script>
+    let myAudio = document.querySelector('#audio')
+    let result = 0; 
+    let temp = 0;
+    let typeOfOperation = '';
+    var resultLabel = document.getElementById('resultLabel');
+    let number0 = document.getElementById('number0');
+    let number1 = document.getElementById('number1');
+    let number2 = document.getElementById('number2');
+    let number3 = document.getElementById('number3');
+    let number4 = document.getElementById('number4');
+    let number5 = document.getElementById('number5');
+    let number6 = document.getElementById('number6');
+    let number7 = document.getElementById('number7');
+    let number8 = document.getElementById('number8');
+    let number9 = document.getElementById('number9');
+
+    let functionClear = document.getElementById('functionClear');
+    let functionChangeSymbol = document.getElementById('functionChangeSymbol');
+    let functionRest = document.getElementById('functionRest');
+    let functionDivisor = document.getElementById('functionDivisor');
+    let functionMultiplication = document.getElementById('functionMultiplication');
+    let functionmLess = document.getElementById('functionmLess');
+    let functionPlus = document.getElementById('functionPlus');
+    let functionDot = document.getElementById('functionDot');
+    let functionEqual = document.getElementById('functionEqual');
+
+    number0.onclick = function() {
+        myAudio.play()
+        temp = 0
+        resultLabel.innerHTML = temp;
+    };
+    number1.onclick = function() {
+        myAudio.play()
+        temp = 1
+        resultLabel.innerHTML = temp;
+    };
+    number2.onclick = function() {
+        myAudio.play()
+        temp = 2
+        resultLabel.innerHTML = temp
+    };
+    number3.onclick = function() {
+        myAudio.play()
+        temp = 3
+        resultLabel.innerHTML = temp
+    };
+    number4.onclick = function() {
+        myAudio.play()
+        temp = 4
+        resultLabel.innerHTML = temp
+    };
+    number5.onclick = function() {
+        myAudio.play()
+        temp = 5
+        resultLabel.innerHTML = temp
+    };
+    number6.onclick = function() {
+        myAudio.play()
+        temp = 6
+        resultLabel.innerHTML = temp
+    };
+    number7.onclick = function() {
+        myAudio.play()
+        temp = 7
+        resultLabel.innerHTML = temp
+    };
+    number8.onclick = function() {
+        myAudio.play()
+        temp = 8
+        resultLabel.innerHTML = temp
+    };
+    number9.onclick = function() {
+        myAudio.play()
+        temp = 9
+        resultLabel.innerHTML = temp
+    };
+    functionClear.onclick = function() {
+        myAudio.play()
+        result = 0;
+        temp = 0;
+        typeOfOperation = '';
+        resultLabel.innerHTML = 0;
+    };
+    functionChangeSymbol.onclick = function() {
+        myAudio.play()
+    };
+    functionRest.onclick = function() {
+        myAudio.play()
+    };
+    functionDivisor.onclick = function() {
+        myAudio.play()
+    };
+    functionMultiplication.onclick = function() {
+        myAudio.play()
+    };
+    functionmLess.onclick = function() {
+        myAudio.play()
+        typeOfOperation = '-'
+        Calculate()
+    };
+    functionPlus.onclick = function() {
+        myAudio.play()
+        typeOfOperation = '+'
+        Calculate()
+    };
+    functionDot.onclick = function() {
+        myAudio.play()
+    };
+    functionEqual.onclick = function() {
+        myAudio.play()
+        resultLabel.innerHTML = result;
+    };
+    function Calculate(){
+        switch (typeOfOperation) {
+            case '+':
+                Sum()
+                break;
+            case '-':
+                Less()
+                break;
+            default:
+                break;
+        }
+        typeOfOperation = '';
+    }
+    function Sum(){
+        result = result + temp;
+    }
+    function Less(){
+        result = result - temp;
+    }
+</script>
