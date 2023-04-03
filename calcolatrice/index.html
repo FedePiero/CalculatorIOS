@@ -199,53 +199,103 @@
 
     number0.onclick = function() {
         myAudio.play()
-        temp = 0
-        resultLabel.innerHTML = temp;
+        if(result == 0){
+            result = 0
+            resultLabel.innerHTML = result;
+        }else{
+            temp = 0
+            resultLabel.innerHTML = temp;
+        }
     };
     number1.onclick = function() {
         myAudio.play()
-        temp = 1
-        resultLabel.innerHTML = temp;
+        if(result == 0){
+            result = 1
+            resultLabel.innerHTML = result;
+        }else{
+            temp = 1
+            resultLabel.innerHTML = temp;
+        }
     };
     number2.onclick = function() {
         myAudio.play()
-        temp = 2
-        resultLabel.innerHTML = temp
+        if(result == 0){
+            result = 2
+            resultLabel.innerHTML = result;
+        }else{
+            temp = 2
+            resultLabel.innerHTML = temp;
+        }
     };
     number3.onclick = function() {
         myAudio.play()
-        temp = 3
-        resultLabel.innerHTML = temp
+        if(result == 0){
+            result = 3
+            resultLabel.innerHTML = result;
+        }else{
+            temp = 3
+            resultLabel.innerHTML = temp;
+        }
     };
     number4.onclick = function() {
         myAudio.play()
-        temp = 4
-        resultLabel.innerHTML = temp
+        if(result == 0){
+            result = 4
+            resultLabel.innerHTML = result;
+        }else{
+            temp = 4
+            resultLabel.innerHTML = temp;
+        }
     };
     number5.onclick = function() {
         myAudio.play()
-        temp = 5
-        resultLabel.innerHTML = temp
+        if(result == 0){
+            result = 5
+            resultLabel.innerHTML = result;
+        }else{
+            temp = 5
+            resultLabel.innerHTML = temp;
+        }
     };
     number6.onclick = function() {
         myAudio.play()
-        temp = 6
-        resultLabel.innerHTML = temp
+        if(result == 0){
+            result = 6
+            resultLabel.innerHTML = result;
+        }else{
+            temp = 6
+            resultLabel.innerHTML = temp;
+        }
     };
     number7.onclick = function() {
         myAudio.play()
-        temp = 7
-        resultLabel.innerHTML = temp
+        if(result == 0){
+            result = 7
+            resultLabel.innerHTML = result;
+        }else{
+            temp = 7
+            resultLabel.innerHTML = temp;
+        }
     };
     number8.onclick = function() {
         myAudio.play()
-        temp = 8
-        resultLabel.innerHTML = temp
+        if(result == 0){
+            result = 8
+            resultLabel.innerHTML = result;
+        }else{
+            temp = 8
+            resultLabel.innerHTML = temp;
+        }
     };
     number9.onclick = function() {
         myAudio.play()
-        temp = 9
-        resultLabel.innerHTML = temp
+        if(result == 0){
+            result = 9
+            resultLabel.innerHTML = result;
+        }else{
+            temp = 9
+            resultLabel.innerHTML = temp;
+        }
     };
     functionClear.onclick = function() {
         myAudio.play()
@@ -281,6 +331,9 @@
     };
     functionEqual.onclick = function() {
         myAudio.play()
+        Calculate()
+        typeOfOperation = '';
+        temp = 0;
         resultLabel.innerHTML = result;
     };
     function Calculate(){
@@ -294,7 +347,6 @@
             default:
                 break;
         }
-        typeOfOperation = '';
     }
     function Sum(){
         result = result + temp;
